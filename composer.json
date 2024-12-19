@@ -1,0 +1,16 @@
+{
+    "name": "jesse-richard/dice-bear-php",
+    "description": "Simple package to generate avatars for your models",
+    "autoload": {
+        "psr-4": {
+            "JesseRichard\\DiceBearPhp\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "RichardJesse",
+            "email": "jesse.richard@strathmore.edu"
+        }
+    ],
+    "require": {}
+}

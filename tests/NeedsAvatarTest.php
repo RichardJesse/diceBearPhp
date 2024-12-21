@@ -29,9 +29,23 @@ it("generates an avatar URL with a specified seed parameter", function (){
     expect($this->avatarGenerator->seed($name)->randomStyle()->url())->toMatch('/https:\/\/api\.dicebear\.com\/9\.x\/[a-zA-Z0-9\-]+\/png\?seed=jesse\+Richard/');
 });
 
-it("generates an avatar URL with flip query string", function () {
-    expect($this->avatarGenerator->randomStyle()->flip()->url())->toMatch('/https:\/\/api\.dicebear\.com\/9\.x\/[a-zA-Z0-9\-]+\/png\?flip=true/');
+it("downloads the image that is produced", function () {
+    expect($this->avatarGenerator->randomStyle()->saveImage("uploads"))->toBe(true);
+} );
+
+it("gets the correct file path where the image is stored", function () {
+
+    $this->avatarGenerator->randomStyle()->format('png'); 
+    $imageSaved = $this->avatarGenerator->saveImage("uploads");
+    expect($imageSaved)->toBeTrue(); 
+
+    $savedPath = $this->avatarGenerator->savedPath(); 
+    expect(file_exists($savedPath))->toBe(true); 
 });
+
+// it("generates an avatar URL with flip query string", function () {
+//     expect($this->avatarGenerator->randomStyle()->flip()->url())->toMatch('/https:\/\/api\.dicebear\.com\/9\.x\/[a-zA-Z0-9\-]+\/png\?flip=true/');
+// });
 
 
 

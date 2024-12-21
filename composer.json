@@ -21,8 +21,5 @@
         "allow-plugins": {
             "pestphp/pest-plugin": true
         }
-    },
-    "require": {
-        "symfony/http-foundation": "^7.2"
     }
 }

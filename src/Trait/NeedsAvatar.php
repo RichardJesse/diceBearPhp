@@ -2,7 +2,6 @@
 
 namespace JesseRichard\DiceBearPhp\Trait;
 
-use Illuminate\Support\Str;
 
 trait NeedsAvatar
 {
@@ -12,15 +11,22 @@ trait NeedsAvatar
     protected string $filePath = '';
 
     protected array $styles = [
+        'adventurer',
         'adventurer-neutral',
+        'avataaars',
         'avataaars-neutral',
+        'big-ears',
         'big-ears-neutral',
+        'croodles',
         'croodles-neutral',
         'fun-emoji',
         'identicon',
         'initials',
+        'lorelei',
         'lorelei-neutral',
+        'notionists',
         'notionists-neutral',
+        'pixel-art',
         'pixel-art-neutral',
         'thumbs'
     ];
@@ -157,7 +163,7 @@ trait NeedsAvatar
             if (isset($args[0])) {
                 return $this->style($style)->format($args[0]);
             }
-            return $this->style($method);
+            return $this->style($style);
         }
 
         throw new \BadMethodCallException("Method '{$method}' does not exist.");

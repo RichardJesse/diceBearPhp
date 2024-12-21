@@ -15,25 +15,15 @@ class ComposerStaticInit5dce98ddd435a729d7cb974805dbbf52
         'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         'ec07570ca5a812141189b1fa81503674' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert/Functions.php',
-        '662a729f963d39afe703c9d9b7ab4a8c' => __DIR__ . '/..' . '/symfony/polyfill-php83/bootstrap.php',
         '35a6ad97d21e794e7e22a17d806652e4' => __DIR__ . '/..' . '/nunomaduro/termwind/src/Functions.php',
-        '2203a247e6fda86070a5e4e07aed533a' => __DIR__ . '/..' . '/symfony/clock/Resources/now.php',
-        'a1105708a18b76903365ca1c4aa61b02' => __DIR__ . '/..' . '/symfony/translation/Resources/functions.php',
-        '23f09fe3194f8c2f70923f90d6702129' => __DIR__ . '/..' . '/illuminate/collections/functions.php',
-        '60799491728b879e74601d83e38b2cad' => __DIR__ . '/..' . '/illuminate/collections/helpers.php',
         'a1cfe24d14977df6878b9bf804af2d1c' => __DIR__ . '/..' . '/nunomaduro/collision/src/Adapters/Phpunit/Autoload.php',
         'aadac1114cab8dc19489a7f6dc24c003' => __DIR__ . '/..' . '/pestphp/pest-plugin-arch/src/Autoload.php',
-        'f625ee536139dfb962a398b200bdb2bd' => __DIR__ . '/..' . '/illuminate/support/functions.php',
-        '72579e7bd17821bb1321b87411366eae' => __DIR__ . '/..' . '/illuminate/support/helpers.php',
+        '662a729f963d39afe703c9d9b7ab4a8c' => __DIR__ . '/..' . '/symfony/polyfill-php83/bootstrap.php',
         'f83ed111c2f97a0449abf067f157f418' => __DIR__ . '/..' . '/pestphp/pest/src/Functions.php',
         '7d2876738dc0328edeb8a103c76cd8e7' => __DIR__ . '/..' . '/pestphp/pest/src/Pest.php',
     );
 
     public static $prefixLengthsPsr4 = array (
-        'v' => 
-        array (
-            'voku\\' => 5,
-        ),
         'p' => 
         array (
             'phpDocumentor\\Reflection\\' => 25,
@@ -54,22 +44,18 @@ class ComposerStaticInit5dce98ddd435a729d7cb974805dbbf52
             'Symfony\\Polyfill\\Intl\\Normalizer\\' => 33,
             'Symfony\\Polyfill\\Intl\\Grapheme\\' => 31,
             'Symfony\\Polyfill\\Ctype\\' => 23,
-            'Symfony\\Contracts\\Translation\\' => 30,
             'Symfony\\Contracts\\Service\\' => 26,
-            'Symfony\\Component\\Translation\\' => 30,
             'Symfony\\Component\\String\\' => 25,
             'Symfony\\Component\\Process\\' => 26,
             'Symfony\\Component\\HttpFoundation\\' => 33,
             'Symfony\\Component\\Finder\\' => 25,
             'Symfony\\Component\\Console\\' => 26,
-            'Symfony\\Component\\Clock\\' => 24,
         ),
         'P' => 
         array (
             'Psr\\SimpleCache\\' => 16,
             'Psr\\Log\\' => 8,
             'Psr\\Container\\' => 14,
-            'Psr\\Clock\\' => 10,
             'PhpParser\\' => 10,
             'Pest\\Plugin\\' => 12,
             'Pest\\Mutate\\' => 12,
@@ -88,11 +74,6 @@ class ComposerStaticInit5dce98ddd435a729d7cb974805dbbf52
             'JesseRichard\\DiceBearPhp\\' => 25,
             'Jean85\\' => 7,
         ),
-        'I' => 
-        array (
-            'Illuminate\\Support\\' => 19,
-            'Illuminate\\Contracts\\' => 21,
-        ),
         'F' => 
         array (
             'Fidry\\CpuCoreCounter\\' => 21,
@@ -100,22 +81,12 @@ class ComposerStaticInit5dce98ddd435a729d7cb974805dbbf52
         ),
         'D' => 
         array (
-            'Doctrine\\Inflector\\' => 19,
             'Doctrine\\Deprecations\\' => 22,
             'DeepCopy\\' => 9,
-        ),
-        'C' => 
-        array (
-            'Carbon\\Doctrine\\' => 16,
-            'Carbon\\' => 7,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'voku\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/voku/portable-ascii/src/voku',
-        ),
         'phpDocumentor\\Reflection\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
@@ -154,17 +125,9 @@ class ComposerStaticInit5dce98ddd435a729d7cb974805dbbf52
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-ctype',
         ),
-        'Symfony\\Contracts\\Translation\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/translation-contracts',
-        ),
         'Symfony\\Contracts\\Service\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/service-contracts',
-        ),
-        'Symfony\\Component\\Translation\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/translation',
         ),
         'Symfony\\Component\\String\\' => 
         array (
@@ -186,10 +149,6 @@ class ComposerStaticInit5dce98ddd435a729d7cb974805dbbf52
         array (
             0 => __DIR__ . '/..' . '/symfony/console',
         ),
-        'Symfony\\Component\\Clock\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/clock',
-        ),
         'Psr\\SimpleCache\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/simple-cache/src',
@@ -201,10 +160,6 @@ class ComposerStaticInit5dce98ddd435a729d7cb974805dbbf52
         'Psr\\Container\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/container/src',
-        ),
-        'Psr\\Clock\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/psr/clock/src',
         ),
         'PhpParser\\' => 
         array (
@@ -250,17 +205,6 @@ class ComposerStaticInit5dce98ddd435a729d7cb974805dbbf52
         array (
             0 => __DIR__ . '/..' . '/jean85/pretty-package-versions/src',
         ),
-        'Illuminate\\Support\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/illuminate/macroable',
-            1 => __DIR__ . '/..' . '/illuminate/conditionable',
-            2 => __DIR__ . '/..' . '/illuminate/collections',
-            3 => __DIR__ . '/..' . '/illuminate/support',
-        ),
-        'Illuminate\\Contracts\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/illuminate/contracts',
-        ),
         'Fidry\\CpuCoreCounter\\' => 
         array (
             0 => __DIR__ . '/..' . '/fidry/cpu-core-counter/src',
@@ -269,10 +213,6 @@ class ComposerStaticInit5dce98ddd435a729d7cb974805dbbf52
         array (
             0 => __DIR__ . '/..' . '/fakerphp/faker/src/Faker',
         ),
-        'Doctrine\\Inflector\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Inflector',
-        ),
         'Doctrine\\Deprecations\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/deprecations/src',
@@ -280,14 +220,6 @@ class ComposerStaticInit5dce98ddd435a729d7cb974805dbbf52
         'DeepCopy\\' => 
         array (
             0 => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy',
-        ),
-        'Carbon\\Doctrine\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/carbonphp/carbon-doctrine-types/src/Carbon/Doctrine',
-        ),
-        'Carbon\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon',
         ),
     );
 

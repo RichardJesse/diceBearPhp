@@ -1,6 +1,6 @@
 {
     "name": "jesse-richard/dice-bear-php",
-    "description": "Simple package to generate avatars for your models",
+    "description": "Simple package to generate avatars for your users",
     "license": "MIT",
     "autoload": {
         "psr-4": {
@@ -23,7 +23,6 @@
         }
     },
     "require": {
-        "symfony/http-foundation": "^7.2",
-        "illuminate/support": "^11.36"
+        "symfony/http-foundation": "^7.2"
     }
 }

@@ -1,6 +1,7 @@
 {
     "name": "jesse-richard/dice-bear-php",
     "description": "Simple package to generate avatars for your models",
+    "license": "MIT",
     "autoload": {
         "psr-4": {
             "JesseRichard\\DiceBearPhp\\": "src/"

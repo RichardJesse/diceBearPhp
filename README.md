@@ -1,7 +1,10 @@
 
+
+![Dice Bear Image](Images/avatar.svg)
+
 # Dice Bear for Php
-[![Packagist Downloads](https://img.shields.io/packagist/dt/jesse-richard/dice-bear-php.svg)]
-[![PHP Version](https://img.shields.io/badge/PHP-%3E%3D7.2-brightgreen.svg)](https://php.net/)]
+![Packagist Downloads](https://img.shields.io/packagist/dt/jesse-richard/dice-bear-php.svg)
+![PHP Version](https://img.shields.io/badge/PHP-%3E%3D7.2-brightgreen.svg)(https://php.net/)
 
 This is a simple package that is aimed at making getting avatars from [Dice Bear](dicebear.com) easy in your php application.
 

@@ -28,7 +28,21 @@ trait NeedsAvatar
         'notionists-neutral',
         'pixel-art',
         'pixel-art-neutral',
-        'thumbs'
+        'thumbs',
+        'shapes',
+        'icons',
+        'initials',
+        'rings',
+        'miniavs',
+        'open-peeps',
+        'personas',
+        'micah',
+        'dylan',
+        'bottts',
+        'bottts-neutrals',
+        'big-smile',
+        'glass',
+        'identicon',
     ];
 
     protected string $url = '';
@@ -227,7 +241,7 @@ trait NeedsAvatar
 
 
         if ($this->findExistingImage($directory, $imageContent)) {
-            return true;
+            return $this;
         }
 
 
@@ -241,7 +255,7 @@ trait NeedsAvatar
             throw new \RuntimeException("Failed to save image to: {$this->filePath}");
         }
 
-        return true;
+        return $this;
     }
 
 

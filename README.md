@@ -1,6 +1,6 @@
 
 
-![Dice Bear Image](Images/avatar.svg)
+![Dice Bear Image](Images/certificate%20of.png)
 
 # Dice Bear for Php
 ![Packagist Downloads](https://img.shields.io/packagist/dt/jesse-richard/dice-bear-php.svg)

@@ -11,7 +11,7 @@
 
 # Dice Bear for Php
 
-This is a simple package that is aimed at making getting avatars from [Dice Bear](dicebear.com) easy in your php application.No official affiliation with the original dice bear
+This is a simple package that is aimed at making getting avatars from [Dice Bear](https://www.dicebear.com/) easy in your php application.No official affiliation with the original dice bear
 
 
 ## Installation

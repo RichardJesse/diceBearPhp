@@ -49,6 +49,9 @@ $user = new User();
 // You may choose to get a random style using the randomStyle() method like so
 $user->randomStyle()
 
+//You may choose to pass the style directly by name
+$user->style('thumbs')
+
 // You may choose to use the style as a method and optionally pass in the format you want it to be in using camelCase eg(big ears Neutral)
 $user->bigEarsNeutral('svg')
 

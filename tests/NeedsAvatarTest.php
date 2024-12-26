@@ -43,9 +43,9 @@ it("generates an avatar URL with a specified seed parameter", function (){
 //     expect(file_exists($savedPath))->toBe(true); 
 // });
 
-// it("generates an avatar URL with flip query string", function () {
-//     expect($this->avatarGenerator->randomStyle()->flip()->url())->toMatch('/https:\/\/api\.dicebear\.com\/9\.x\/[a-zA-Z0-9\-]+\/png\?flip=true/');
-// });
+it("generates an avatar URL with flip query string", function () {
+    expect($this->avatarGenerator->flip()->url())->toMatch('/https:\/\/api\.dicebear\.com\/9\.x\/[a-zA-Z0-9\-]+\/png\?flip=true/');
+});
 
 
 

@@ -48,8 +48,8 @@ trait NeedsAvatar
     protected string $url = '';
     protected string $name = '';
     protected string $size = '';
-    protected bool $flip;
-    protected array $formats = ['png', 'jpg', 'svg'];
+    protected  $flip;
+    protected array $formats = ['png', 'jpg', 'svg' , 'webp', 'avif', 'json'];
     protected array $sizes = [32, 48, 64, 80, 96];
     protected string $style = '';
     protected string $format = 'png';
@@ -83,6 +83,25 @@ trait NeedsAvatar
     }
 
     /**
+     * Set the size of the image
+     * 
+     * @param int $size - ra valid size
+     * @return $this
+     * 
+     */
+    public function size(int $size)
+    {
+        if (in_array($size, $this->sizes)) {
+            $this->size = $size;
+            $this->generate();
+        } else {
+            throw new \InvalidArgumentException("Size '{$size}' is not supported.");
+        }
+        return $this;
+        
+    }
+
+    /**
      * Sets the format 
      * 
      * @param $format - valid dice bear format
@@ -94,7 +113,7 @@ trait NeedsAvatar
             $this->format = $format;
             $this->generate();
         } else {
-            throw new \InvalidArgumentException("Style '{$format}' is not valid.");
+            throw new \InvalidArgumentException("Format '{$format}' is not supported.");
         }
         return $this;
     }
@@ -112,11 +131,18 @@ trait NeedsAvatar
         return $this;
     }
 
-    // public function flip($value = true){
-    //     $this->flip = $value;
-    //     $this->generate();
-    //     return $this;
-    // }
+    /**
+     * allows the user to set the flip option
+     * 
+     * @param bool $value - the value for the flip option
+     * @return $this
+     * 
+     */
+    public function flip(bool $value = true){
+        $this->flip = $value;
+        $this->generate();
+        return $this;
+    }
 
     /**
      * Build query parameters for the avatar URL.
@@ -129,7 +155,7 @@ trait NeedsAvatar
         $queryParams = [
             'seed' => !empty($this->name) ? $this->name : null,
             'size' => !empty($this->size) ? $this->size : null,
-            'flip' => !empty($this->flip) ? $this->flip : null
+            'flip' =>  $this->flip === true ? 'true' : ($this->flip === false ? 'false' : null)
         ];
 
 

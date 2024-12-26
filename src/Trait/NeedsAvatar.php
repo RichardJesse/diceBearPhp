@@ -5,9 +5,10 @@ namespace JesseRichard\DiceBearPhp\Trait;
 
 trait NeedsAvatar
 {
-
     protected string $apiUrl = 'https://api.dicebear.com';
+
     protected string $version = '9.x';
+
     protected string $filePath = '';
 
     protected array $styles = [
@@ -46,13 +47,32 @@ trait NeedsAvatar
     ];
 
     protected string $url = '';
+
     protected string $name = '';
+
     protected string $size = '';
-    protected  $flip;
+
+    protected bool $flip;
+
+    protected bool $clip;
+
     protected array $formats = ['png', 'jpg', 'svg' , 'webp', 'avif', 'json'];
+
     protected array $sizes = [32, 48, 64, 80, 96];
+
     protected string $style = '';
+
     protected string $format = 'png';
+
+    protected int $rotate;
+
+    protected int $radius;
+
+    protected int $scale;
+
+    protected int $translateX;
+
+    protected int $translateY;
 
     /**
      * Set the name for the avatar seed.
@@ -80,6 +100,100 @@ trait NeedsAvatar
             throw new \InvalidArgumentException("Style '{$style}' is not valid.");
         }
         return $this;
+    }
+
+    /**
+     * Sets the scale for the image that is produced
+     * 
+     * @param int $scale - the scale for the image that is produced
+     * @return $this
+     * 
+     */
+    public function scale(int $scale)
+    {
+        if($scale <= 200){
+            $this->scale = $scale;
+            $this->generate();
+        }else{
+            throw new \InvalidArgumentException("Scale '{$scale}' is not supported");
+        }
+
+        return $this;
+        
+    }
+
+    /**
+     * sets the radius for the image that is produced
+     * 
+     * @param int $radius - The radius for the image that is produced
+     * @return $this
+     * 
+     */
+    public function radius(int $radius)
+    {
+        if($radius <= 50){
+            $this->radius = $radius;
+            $this->generate();
+        }else{
+            throw new \InvalidArgumentException("Radius '{$radius}' is not supported");
+        }
+
+        return $this;
+
+    }
+
+
+    /**
+     * Defines the translate for the image that is added
+     * 
+     * @param string $axis - This is the axis for which the translation takes place either X or Y
+     * @param string $translate - The value for the translation between -100 to 100 on both axes
+     * 
+     * @return $this
+     */
+    public function translate(string $axis, int $translate)
+    {
+        if((-100 <= $translate) && ($translate <= 100)){
+            if($axis == 'X'){
+        
+                $this->translateX = $translate;
+                $this->generate();
+            }
+            elseif($axis == 'Y'){
+                $this->translateY = $translate;
+                $this->generate();
+            }
+            else{
+                throw new \InvalidArgumentException("No such axis exists");
+    
+            }
+
+        }else{
+            throw new \InvalidArgumentException("Translate is out of range");
+        }
+        
+
+      return $this;
+        
+    }
+
+    /**
+     * set the angle for rotation
+     * 
+     * @param int $angle - angle for which the image should be rotated
+     * @return $this
+     * 
+     */
+    public function rotate(int $angle)
+    {
+        if($angle <= 360){
+          $this->rotate = $angle;
+          $this->generate();
+        } else {
+            throw new \InvalidArgumentException("Angle '{$angle}' is past 360 degress");
+        }
+        return $this;
+        
     }
 
     /**
@@ -144,6 +258,12 @@ trait NeedsAvatar
         return $this;
     }
 
+    public function clip(bool $value = true){
+        $this->clip = $value;
+        $this->generate();
+        return $this;
+    }
+
     /**
      * Build query parameters for the avatar URL.
      *
@@ -155,7 +275,13 @@ trait NeedsAvatar
         $queryParams = [
             'seed' => !empty($this->name) ? $this->name : null,
             'size' => !empty($this->size) ? $this->size : null,
-            'flip' =>  $this->flip === true ? 'true' : ($this->flip === false ? 'false' : null)
+            'flip' =>  $this->flip === true ? 'true' : ($this->flip === false ? 'false' : null),
+            'clip' =>  $this->clip === true ? 'true' : ($this->clip === false ? 'false' : null),
+            'rotate' => !empty($this->rotate) ? $this->rotate : null,
+            'radius' => !empty($this->radius) ? $this->radius : null,
+            'scale' => !empty($this->scale) ? $this->scale : null,
+            'translateX' => !empty($this->translateX) ? $this->translateX : null,
+            'translateY' => !empty($this->translateY) ? $this->translateY : null,
         ];
 
 

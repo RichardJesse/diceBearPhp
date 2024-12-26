@@ -11,7 +11,7 @@
 
 # Dice Bear for Php
 
-This is a simple package that is aimed at making getting avatars from [Dice Bear](dicebear.com) easy in your php application.No official affiliation with the original dice bear
+This is a simple package that is aimed at making getting avatars from [Dice Bear](https://www.dicebear.com/) easy in your php application.No official affiliation with the original dice bear
 
 
 ## Installation
@@ -39,7 +39,7 @@ This package provides some utilities to make the experience with the dice Bear e
 
 ### Styles
 
-Dice Bear offers a couple of styles that users can take advantage of and the package supports all the available styles. This package provides for three ways to make use of the Dice Bear Styles. You can have a look at all the styles [here](https://www.dicebear.com/styles/)
+Dice Bear offers a couple of styles that you can take advantage of and the package supports all the available styles. This package provides for three ways to make use of the Dice Bear Styles. You can have a look at all the styles [here](https://www.dicebear.com/styles/)
 
 ```php
 // say the NeedsAvatar Trait is in use in the user class

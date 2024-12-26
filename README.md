@@ -23,7 +23,7 @@ To install the package all you need to do is run this command in your terminal.(
 
 
 ## How to use
-Using diceBearPhp is pretty easy all use need to do is make use of the `NeedsAvatar` Trait and you'll be good to go.
+Using diceBearPhp is pretty easy all you need to do is make use of the `NeedsAvatar` Trait and you'll be good to go.
 
 ```php
 use JesseRichard\DiceBearPhp\Trait\NeedsAvatar;

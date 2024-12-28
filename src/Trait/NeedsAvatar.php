@@ -52,9 +52,9 @@ trait NeedsAvatar
 
     protected string $size = '';
 
-    protected bool $flip;
+    protected bool|null $flip = null ;
 
-    protected bool $clip;
+    protected bool|null $clip = null;
 
     protected array $formats = ['png', 'jpg', 'svg' , 'webp', 'avif', 'json'];
 
@@ -111,7 +111,7 @@ trait NeedsAvatar
      */
     public function scale(int $scale)
     {
-        if($scale <= 200){
+        if((0 <= $scale) && ($scale <= 200)){
             $this->scale = $scale;
             $this->generate();
         }else{
@@ -131,7 +131,7 @@ trait NeedsAvatar
      */
     public function radius(int $radius)
     {
-        if($radius <= 50){
+        if((0 <= $radius) && ($radius <= 50)){
             $this->radius = $radius;
             $this->generate();
         }else{

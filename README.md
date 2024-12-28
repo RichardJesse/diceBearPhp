@@ -23,7 +23,7 @@ To install the package all you need to do is run this command in your terminal.(
 
 
 ## How to use
-Using diceBearPhp is pretty easy all use need to do is make use of the `NeedsAvatar` Trait and you'll be good to go.
+Using diceBearPhp is pretty easy all you need to do is make use of the `NeedsAvatar` Trait and you'll be good to go.
 
 ```php
 use JesseRichard\DiceBearPhp\Trait\NeedsAvatar;
@@ -49,6 +49,9 @@ $user = new User();
 // You may choose to get a random style using the randomStyle() method like so
 $user->randomStyle()
 
+//You may choose to pass the style directly by name
+$user->style('thumbs')
+
 // You may choose to use the style as a method and optionally pass in the format you want it to be in using camelCase eg(big ears Neutral)
 $user->bigEarsNeutral('svg')
 
@@ -70,8 +73,66 @@ $user->format('jpeg')
 $user->bigEarsNeutral('svg')
 
 ```
+### Seed
 
-### Avatar alternatives
+This is the property that determines the initial value and that way you are able to create the same avatar again and again.And its simple to use.
+```php
+// You may pass in your unique value that you would like to be used could be anything but you must pass it as a string
+$user->seed('name')->randomStyle();
+
+```
+### Flip
+
+This property determines whether the image that is produced is fliped or not.
+
+```php
+// you may not pass a parameter the default value is true
+$user->flip()
+ //  OR
+// You may choose to pass a parameter
+$user->flip(false)
+
+```
+### Rotate
+This property allows you to choose how much you would like to rotate the image around a 360 degree angle.
+
+```php
+// Rotates the image that is produced by 60 degrees
+$user->rotate(60)
+
+```
+
+### Scale 
+This property determines how zoomed in or scaled the image that is produced will be.The range being between 0 to 200
+
+```php
+// Scales the image by factor of 100
+$user->scale(100);
+
+```
+### Radius
+This property determines how rounded the image that is produced will be. The range is between 0 to 50.
+
+```php
+// sets the radius of the image that will be produced with a radius of 40
+$user->radius(40);
+
+```
+### Translate
+This property allows you to determined the position of the subject of the image that will be produced. It ranges between -100 to 100
+
+```php
+// Translates the image that is produced by a factor of -50 on the x axis
+$user->translate('X', -50);
+
+// Translates the image that is produced by a factor of -50 on the y axis
+$user->translate('Y', -50);
+
+
+```
+
+
+## Avatar alternatives
 
 The avatars that are provided by Dice Bear are essentially image files. The package gives you the autonomy to choose what to do with them.
 

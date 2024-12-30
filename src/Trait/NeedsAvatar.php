@@ -78,6 +78,8 @@ trait NeedsAvatar
 
     protected string $backgroundType;
 
+    protected string $backgroundRotation;
+
     /**
      * Set the name for the avatar seed.
      *
@@ -336,7 +338,21 @@ trait NeedsAvatar
     {
         $this->backgroundType = $backgroundType;
         $this->generate();
-        return $this;       
+        return $this;
+    }
+
+    /**
+     * Set the rotation for the background of the image
+     * 
+     * @param int angle -  angle between 0 and 360 degrees
+     * @return $this
+     * 
+     */
+    public function backgroundRotation(int $angle)
+    {
+        $this->backgroundRotation = $angle;
+        $this->generate();
+        return $this;
     }
 
     /**

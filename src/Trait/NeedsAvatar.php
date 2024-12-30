@@ -76,6 +76,8 @@ trait NeedsAvatar
 
     protected string $backgroundColor;
 
+    protected string $backgroundType;
+
     /**
      * Set the name for the avatar seed.
      *
@@ -285,6 +287,7 @@ trait NeedsAvatar
             'translateX' => !empty($this->translateX) ? $this->translateX : null,
             'translateY' => !empty($this->translateY) ? $this->translateY : null,
             'backgroundColor' => !empty($this->backgroundColor) ? $this->backgroundColor : null,
+            'backgroundType' => !empty($this->backgroundType) ? $this->backgroundType : null,
         ];
 
 
@@ -320,6 +323,20 @@ trait NeedsAvatar
         $this->backgroundColor = $colorHex;
         $this->generate();
         return $this;
+    }
+
+    /**
+     * Sets the type of background that the image that is produced will have
+     * @param String $backgroundType - a valid background type
+     * 
+     * @return $this
+     * 
+     */
+    public function backgroundType(String $backgroundType)
+    {
+        $this->backgroundType = $backgroundType;
+        $this->generate();
+        return $this;       
     }
 
     /**

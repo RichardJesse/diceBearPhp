@@ -38,6 +38,11 @@ it('generates an image url with a background color', function () {
 
 });
 
+it('generates an image url with style specific options', function () {
+    expect($this->avatarGenerator->thumbs()->options(['eyes' => 'variant3W16'])->url())->toBe('https://api.dicebear.com/9.x/thumbs/png?eyes=variant3W16');
+
+});
+
 
 
 

@@ -275,14 +275,13 @@ trait NeedsAvatar
      *
      * @return string|null
      */
-    protected function buildQueryParameters(): ?string
-    {
-
+    protected function buildQueryParameters(array $additionalParams = []): ?string {
+        
         $queryParams = [
             'seed' => !empty($this->name) ? $this->name : null,
             'size' => !empty($this->size) ? $this->size : null,
-            'flip' =>  $this->flip === true ? 'true' : ($this->flip === false ? 'false' : null),
-            'clip' =>  $this->clip === true ? 'true' : ($this->clip === false ? 'false' : null),
+            'flip' => $this->flip === true ? 'true' : ($this->flip === false ? 'false' : null),
+            'clip' => $this->clip === true ? 'true' : ($this->clip === false ? 'false' : null),
             'rotate' => !empty($this->rotate) ? $this->rotate : null,
             'radius' => !empty($this->radius) ? $this->radius : null,
             'scale' => !empty($this->scale) ? $this->scale : null,
@@ -291,22 +290,23 @@ trait NeedsAvatar
             'backgroundColor' => !empty($this->backgroundColor) ? $this->backgroundColor : null,
             'backgroundType' => !empty($this->backgroundType) ? $this->backgroundType : null,
         ];
-
-
-        $queryParams = array_filter($queryParams);
-
-        return !empty($queryParams) ? http_build_query($queryParams) : null;
+    
+        
+        $queryParams = array_merge($queryParams, array_filter($additionalParams));
+    
+        return !empty(array_filter($queryParams)) ? http_build_query(array_filter($queryParams)) : null;
     }
 
     /**
      * Generate the avatar URL.
+     * @param array $additionalParams - optional additional parameters that need to be passed to the
      *
      * @return void
      */
-    protected function generate(): void
+    protected function generate($additionalParams = []): void
     {
         $this->url = "{$this->apiUrl}/{$this->version}/{$this->style}/{$this->format}";
-        $queryString = $this->buildQueryParameters();
+        $queryString = $this->buildQueryParameters($additionalParams);
 
         if ($queryString) {
             $this->url .= '?' . $queryString;
@@ -344,15 +344,21 @@ trait NeedsAvatar
     /**
      * Set the rotation for the background of the image
      * 
-     * @param int angle -  angle between 0 and 360 degrees
+     * @param int angle - angle between 0 and 360 degrees
      * @return $this
      * 
      */
     public function backgroundRotation(int $angle)
     {
-        $this->backgroundRotation = $angle;
-        $this->generate();
+
+        if ($angle <= 360) {
+            $this->backgroundRotation = $angle;
+            $this->generate();
+        } else {
+            throw new \InvalidArgumentException("Angle '{$angle}' is past 360 degress");
+        }
         return $this;
+       
     }
 
     /**
@@ -455,6 +461,19 @@ trait NeedsAvatar
     {
 
         return $this->filePath;
+    }
+
+    /**
+     * Binds options to the url
+     * @param array $styleOptions - array of the style options to be added
+     * 
+     */
+    public function options(array $styleOptions)
+    {
+        
+        $this->generate($styleOptions);
+        return $this;
+
     }
 
 
@@ -800,4 +819,5 @@ trait NeedsAvatar
             return "not a valid color";
         }
     }
+
 }

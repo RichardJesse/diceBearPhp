@@ -152,7 +152,7 @@ DiceBear offers additional options that are sometimes style specific.To take adv
 
 ```php
 
-// Say you want to make use of the (Micah)[https://www.dicebear.com/styles/micah/] style and you want to customize the eyes option to be set to round
+// Say you want to make use of the Micah style and you want to customize the eyes option to be set to round
 $user->style('micah')->options(['eyes' => 'round']);
 
 ```

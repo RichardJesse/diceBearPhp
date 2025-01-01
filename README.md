@@ -131,6 +131,33 @@ $user->translate('Y', -50);
 
 ```
 
+### Background
+This feature allows you to make changes to the background of the image that is produced. For the background you could change the color, type and rotation.
+
+```php
+// Changing background color 
+$user->backgroundColor('red')
+
+// changing the background type
+$user->backgroundType('solid')
+
+// changing the angle rotation of the background 
+$user->backgroundRotation(70)
+
+
+```
+
+### Style specific options
+DiceBear offers additional options that are sometimes style specific.To take advantage of this we make use of the `options` method.
+
+```php
+
+// Say you want to make use of the (Micah)[https://www.dicebear.com/styles/micah/] style and you want to customize the eyes option to be set to round
+$user->style('micah')->options(['eyes' => 'round']);
+
+```
+
+
 
 ## Avatar alternatives
 

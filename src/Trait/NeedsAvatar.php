@@ -465,7 +465,9 @@ trait NeedsAvatar
 
     /**
      * Binds options to the url
+     * 
      * @param array $styleOptions - array of the style options to be added
+     * @return $this
      * 
      */
     public function options(array $styleOptions)
@@ -659,7 +661,14 @@ trait NeedsAvatar
             : $this->style('glass')->format($format);
     }
 
-    protected function colorNameToHex($color_name)
+    /**
+     * Converts a color name to its hex equivalent
+     * 
+     * @param String $colorName - valid color name
+     * @return $this
+     * 
+     */
+    protected function colorNameToHex(String $colorName)
     {
 
         $colors  =  array(
@@ -812,9 +821,9 @@ trait NeedsAvatar
             'yellowgreen' => '9ACD32'
         );
 
-        $color_name = strtolower($color_name);
-        if (isset($colors[$color_name])) {
-            return ($colors[$color_name]);
+        $colorName = strtolower($colorName);
+        if (isset($colors[$colorName])) {
+            return ($colors[$colorName]);
         } else {
             return "not a valid color";
         }

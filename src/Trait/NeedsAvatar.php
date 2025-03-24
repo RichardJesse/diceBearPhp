@@ -94,8 +94,8 @@ trait NeedsAvatar
 
     /**
      * Specify the style that the user can use
-     * @param $style - valid dice bear style
      * 
+     * @param $style - valid dice bear style
      */
     public function style(string $style)
     {

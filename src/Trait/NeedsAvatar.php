@@ -7,11 +7,11 @@ trait NeedsAvatar
 {
     protected string $apiUrl = 'https://api.dicebear.com';
 
-    protected string $version = '9.x';
+    private string $version = '9.x';
 
-    protected string $filePath = '';
+    private string $filePath = '';
 
-    protected array $styles = [
+    private array $styles = [
         'adventurer',
         'adventurer-neutral',
         'avataaars',
@@ -40,45 +40,45 @@ trait NeedsAvatar
         'micah',
         'dylan',
         'bottts',
-        'bottts-neutrals',
+        'bottts-neutral',
         'big-smile',
         'glass',
         'identicon',
     ];
 
-    protected string $url = '';
+    private string $url = '';
 
-    protected string $name = '';
+    private string $name = '';
 
-    protected string $size = '';
+    private string $size = '';
 
-    protected bool|null $flip = null;
+    private bool $flip = false;
 
-    protected bool|null $clip = null;
+    private bool $clip = false;
 
-    protected array $formats = ['png', 'jpg', 'svg', 'webp', 'avif', 'json'];
+    private array $formats = ['png', 'jpg', 'svg' , 'webp', 'avif', 'json'];
 
-    protected array $sizes = [32, 48, 64, 80, 96];
+    private array $sizes = [32, 48, 64, 80, 96];
 
-    protected string $style = '';
+    private string $style = '';
 
-    protected string $format = 'png';
+    private string $format = 'png';
 
-    protected int $rotate;
+    private int $rotate = 0;
 
-    protected int $radius;
+    private int $radius;
 
-    protected int $scale;
+    private int $scale;
 
-    protected int $translateX;
+    private int $translateX;
 
-    protected int $translateY;
+    private int $translateY;
 
-    protected string $backgroundColor;
+    private string $backgroundColor;
 
-    protected string $backgroundType;
+    private string $backgroundType;
 
-    protected string $backgroundRotation;
+    private string $backgroundRotation;
 
     /**
      * Set the name for the avatar seed.
@@ -643,10 +643,10 @@ trait NeedsAvatar
             : $this->style('bottts')->format($format);
     }
 
-    public function botttsNeutrals($format = '')
+    public function botttsNeutral($format = '')
     {
-        return $format == '' ? $this->style('bottts-neutrals')->format($this->format)
-            : $this->style('bottts-neutrals')->format($format);
+        return $format == '' ? $this->style('bottts-neutral')->format($this->format)
+            : $this->style('bottts-neutral')->format($format);
     }
 
     public function bigSmile($format = '')

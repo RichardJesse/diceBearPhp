@@ -5,7 +5,7 @@ namespace JesseRichard\DiceBearPhp\Trait;
 
 trait NeedsAvatar
 {
-    protected string $apiUrl = 'https://api.dicebear.com';
+    private string $apiUrl = 'https://api.dicebear.com';
 
     private string $version = '9.x';
 

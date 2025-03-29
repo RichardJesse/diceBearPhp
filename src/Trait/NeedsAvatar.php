@@ -402,7 +402,7 @@ trait NeedsAvatar
      * @param string $directory The directory where the image will be saved.
      * @return bool True if the image was saved successfully, false otherwise.
      */
-    public function saveImage(string $directory): bool
+    public function saveImage(string $directory)
     {
 
         $imageContent = $this->getContent();
